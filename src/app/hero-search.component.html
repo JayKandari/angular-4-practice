@@ -6,7 +6,8 @@
     <md-input-container class="query">
       <input mdInput id="searchtext" placeholder="Search for Hero Name" [(ngModel)]="query" (input)="filter(query)" />
     </md-input-container>
-    <button md-raised-button (click)="query=''; refresh()">Clear</button>
+    <button md-raised-button (click)="query=''; refresh()">Clear</button>&nbsp;
+    <md-checkbox [(ngModel)]="deleteConfirm"> Confirm before deleting item</md-checkbox>
     <hr>
     <p>Results:</p>
     <md-list>
@@ -18,4 +19,9 @@
   <md-card-actions>
 
   </md-card-actions>
+  <md-card-footer>
+
+  </md-card-footer>
 </md-card>
+
+<hero-detail [hero]="selectedHero"></hero-detail>

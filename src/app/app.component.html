@@ -8,7 +8,6 @@
     </md-card-header>
     <md-card-content>
       <button md-raised-button (click)="toggleDebug()">Toggle Debug box</button>
-      <label><md-checkbox [(ngModel)]="deleteConfirm"> Confirm before deleting item</md-checkbox></label>
     </md-card-content>
   </md-card>
 
@@ -28,22 +27,6 @@
 
 
   <hero-search [query]=""></hero-search>
-
-  <md-card class="heroes_list">
-    <md-card-header>
-      <md-card-title>Heroes List</md-card-title>
-      <md-card-subtitle>Click Hero name to select it, click again to deselect. Click delete icon to delete a Hero.</md-card-subtitle>
-    </md-card-header>
-    <md-card-content>
-      <md-list>
-        <md-list-item *ngFor="let hero of heroes let i = index" [class.selected]="hero == selectedHero" (click)="selectHero(hero)">
-          <p md-line>{{hero.name}} <i class="material-icons removeitem" (click)="removeHeroItem(i)">ic_delete</i></p>
-        </md-list-item>
-      </md-list>
-    </md-card-content>
-  </md-card>
-
-  <hero-detail [hero]="selectedHero"></hero-detail>
 
   <div class="debug" [hidden]="!showDebugDialog">
     <md-card class="" >

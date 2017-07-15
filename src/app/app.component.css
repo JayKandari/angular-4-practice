@@ -30,11 +30,3 @@
   background: lightgrey;
 }
 
-.heroes_list {
-
-}
-.heroes_list .removeitem {
-  color:red;
-  cursor: pointer;
-}
-

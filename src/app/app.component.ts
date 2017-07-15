@@ -9,14 +9,13 @@ import { HeroService } from './hero.service';
   providers: [HeroService]
 })
 export class AppComponent implements OnInit {
+
   title = 'Indian super-heroes';
   newhero = {
     name: '',
   };
   heroes = [];
   showDebugDialog = true;
-  deleteConfirm = true;
-  selectedHero = null;
 
   constructor(private heroService: HeroService) {
 
@@ -30,9 +29,6 @@ export class AppComponent implements OnInit {
     this.heroService.getHeroes().then(heroes => this.heroes = this.heroes.concat(heroes));
   }
 
-  removeHero(i): void {
-    this.heroService.removeHero(i).then(heroes => this.heroes = heroes);
-  }
 
   addHero(hero): void {
     this.heroService.addHero(hero).then(heroes => this.heroes = heroes);
@@ -46,20 +42,6 @@ export class AppComponent implements OnInit {
       this.newhero.name = ''
     }
   };
-
-  removeHeroItem = function(i) {
-    var cnf = (this.deleteConfirm)? confirm('Are you sure to delete "'+ this.heroes[i].name + '"?') : true;
-    if (cnf) {
-      // this.heroes.splice(i,1);
-      this.removeHero(i);
-    }
-  };
-
-  selectHero = function(hero) {
-    console.log('selecting this hero: ', hero);
-    hero = (this.selectedHero == hero)? null : hero;
-    this.selectedHero = (hero != undefined)? hero : null;
-  }
 
   toggleDebug = function() {
     this.showDebugDialog = (this.showDebugDialog)? false: true;
