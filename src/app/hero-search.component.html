@@ -1,2 +1,21 @@
-<md-card>Simple card</md-card>
-<button md-raised-button>Helo there</button>
+<md-card class="search_hero">
+  <md-card-header>
+    <md-card-title>Search Hero</md-card-title>
+  </md-card-header>
+  <md-card-content>
+    <md-input-container class="query">
+      <input mdInput id="searchtext" placeholder="Search for Hero Name" [(ngModel)]="query" (input)="filter(query)" />
+    </md-input-container>
+    <button md-raised-button (click)="query=''">Clear</button>
+    <hr>
+    <p>Results:</p>
+    <md-list>
+      <md-list-item *ngFor="let hero of filteredHeroes let i = index" [class.selected]="hero == selectedHero" (click)="selectHero(hero)">
+        <p md-line>{{hero.name}} <i class="material-icons removeitem" (click)="removeHeroItem(i)">ic_delete</i></p>
+      </md-list-item>
+    </md-list>
+  </md-card-content>
+  <md-card-actions>
+
+  </md-card-actions>
+</md-card>

@@ -12,9 +12,9 @@ import { Hero } from './hero';
   }
   `],
   template: `
-  <div class="selected_hero" [hidden]="hero == null">
+  <div class="selected_hero" [hidden]="hero == null || hero == undefined">
   <md-card>
-    <h4>Selected Hero : {{hero.name}}</h4>
+    <h4>Selected Hero : {{ (hero)? hero.name : 'Null'}}</h4>
     Data:
     <pre>
       {{hero | json}}

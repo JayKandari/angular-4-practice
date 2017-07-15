@@ -9,7 +9,7 @@ export class HeroService{
     // return Promise.resolve(HEROES);
     // Simulating a slow connection.
     return new Promise(resolve => {
-      setTimeout(() => resolve(HEROES), 5000)
+      setTimeout(() => resolve(HEROES), 10)
     });
-  }
+  };
 }
