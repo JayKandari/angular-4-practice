@@ -30,10 +30,19 @@ export class AppComponent implements OnInit {
     this.heroService.getHeroes().then(heroes => this.heroes = this.heroes.concat(heroes));
   }
 
+  removeHero(i): void {
+    this.heroService.removeHero(i).then(heroes => this.heroes = heroes);
+  }
+
+  addHero(hero): void {
+    this.heroService.addHero(hero).then(heroes => this.heroes = heroes);
+  }
+
   addNewHero = function(name) {
     if (name != '') {
       console.log('new hero name: '+ name);
-      this.heroes.push ({id : this.heroes.length+1, name:name});
+      let hero = {id : this.heroes.length+1, name:name};
+      this.addHero(hero);
       this.newhero.name = ''
     }
   };
@@ -41,7 +50,8 @@ export class AppComponent implements OnInit {
   removeHeroItem = function(i) {
     var cnf = (this.deleteConfirm)? confirm('Are you sure to delete "'+ this.heroes[i].name + '"?') : true;
     if (cnf) {
-      this.heroes.splice(i,1);
+      // this.heroes.splice(i,1);
+      this.removeHero(i);
     }
   };
 

@@ -30,7 +30,11 @@ export class HeroSearchComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes().then(heroes => this.heroes = this.filteredHeroes = this.heroes.concat(heroes));
+    this.heroService.getHeroes().then(heroes => this.heroes = this.filteredHeroes = heroes);
+  }
+
+  refresh() : void {
+    this.getHeroes();
   }
 
   filter(term) {
@@ -42,18 +46,6 @@ export class HeroSearchComponent implements OnInit {
       return hero.name.toLowerCase().indexOf(term) !== -1;
     });
     console.log('searching...', term, this.filteredHeroes)
-}
+  }
 
-  // assignCopy(){
-  //  this.filteredHeroes = Object.assign([], this.heroes);
-  // };
-
-  // filterItem(value){
-  //    if(!value) this.assignCopy(); //when nothing has typed
-  //    this.filteredHeroes = Object.assign([], this.heroes).filter(
-  //       item => item.name.toLowerCase().indexOf(value.toLowerCase()) > -1
-  //    )
-  // }
-  //when you fetch collection from server.
-  // this.assignCopy();
 }

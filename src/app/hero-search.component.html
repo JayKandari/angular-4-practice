@@ -6,7 +6,7 @@
     <md-input-container class="query">
       <input mdInput id="searchtext" placeholder="Search for Hero Name" [(ngModel)]="query" (input)="filter(query)" />
     </md-input-container>
-    <button md-raised-button (click)="query=''">Clear</button>
+    <button md-raised-button (click)="query=''; refresh()">Clear</button>
     <hr>
     <p>Results:</p>
     <md-list>
