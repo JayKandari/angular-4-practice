@@ -16,14 +16,14 @@
   </div>
 
   <div class="heroes_list">
-    <h4>Heroes List</h4>
+    <h4 md-subheader>Heroes List</h4>
     <p class="hint">Click Hero name to select it, click again to deselect. Click "remove" to delete a Hero.</p>
     <div>
-      <ul>
-        <li *ngFor="let hero of heroes let i = index" [class.selected]="hero == selectedHero" (click)="selectHero(hero)">
-        {{hero.name}} <span class="removeitem" (click)="removeHeroItem(i)">(remove)</span>
-        </li>
-      </ul>
+      <md-list>
+        <md-list-item *ngFor="let hero of heroes let i = index" [class.selected]="hero == selectedHero" (click)="selectHero(hero)">
+          <p md-line>{{hero.name}} <i class="material-icons removeitem" (click)="removeHeroItem(i)">ic_delete</i></p>
+        </md-list-item>
+      </md-list>
     </div>
   </div>
 

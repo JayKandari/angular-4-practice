@@ -8,14 +8,14 @@ import { Hero } from './hero';
     background: magenta;
   }
   `],
-  template: `
+  template: `<md-card>
   <div class="selected_hero" [hidden]="hero == null">
     <h4>Selected Hero : hero.name</h4>
     Data:
     <pre>
       {{hero | json}}
     </pre>
-  </div>
+  </div></md-card>
   `
 })
 export class HeroDetailComponent {

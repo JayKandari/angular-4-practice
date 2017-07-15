@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 // ng-material imports.
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule, MdCheckboxModule, MdInputModule, MdDialogModule} from '@angular/material';
+import {MdButtonModule, MdCheckboxModule, MdInputModule, MdDialogModule, MdListModule, MdCardModule} from '@angular/material';
 
 
 // Import custom components..
