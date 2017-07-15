@@ -25,12 +25,7 @@
     </div>
   </div>
 
-  <div class="selected_hero" [hidden]="selectedHero == null">
-    <h4>Selected Hero</h4>
-    <pre>
-      {{selectedHero | json}}
-    </pre>
-  </div>
+  <hero-detail [hero]="selectedHero"></hero-detail>
 
   <div class="debug" [hidden]="!showDebugDialog">
     <h3>Debugging Component: </h3>
