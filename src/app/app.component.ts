@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   newhero = {
     name: '',
   };
-  heroes = null;
+  heroes = [];
   showDebugDialog = true;
   deleteConfirm = true;
   selectedHero = null;
@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    this.heroService.getHeroes().then(heroes => this.heroes = this.heroes.concat(heroes));
   }
 
   addNewHero = function(name) {

@@ -4,6 +4,11 @@ import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
+// ng-material imports.
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MdButtonModule, MdCheckboxModule, MdInputModule, MdDialogModule} from '@angular/material';
+
+
 // Import custom components..
 import { HeroDetailComponent } from './hero-detail.component';
 
@@ -14,8 +19,12 @@ import { HeroDetailComponent } from './hero-detail.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    NoopAnimationsModule,
+    MdButtonModule,
+    MdCheckboxModule, MdInputModule, MdDialogModule
   ],
+  schemas: [],
   providers: [],
   bootstrap: [AppComponent]
 })
