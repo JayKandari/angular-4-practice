@@ -1,0 +1,43 @@
+.hint {
+  font-style: italic;
+  font-size: 12px;
+
+}
+
+#superheroes {
+  background: beige;
+}
+#superheroes h1 {
+  color : maroon;
+}
+#superheroes .debug {
+  position: absolute;
+  opacity: 0.8;
+  right:20px;
+  top: 20px;
+  width:500px;
+  height: 400px;
+
+  background: wheat;
+  border: 1px solid maroon;
+  padding: 5px;
+}
+#superheroes .debug .messages{
+  position: relative;
+  height:340px;
+  overflow-y: scroll;
+  background: lightgrey;
+}
+
+.heroes_list {
+
+}
+.heroes_list .removeitem {
+  color:red;
+  cursor: pointer;
+}
+
+
+.selected_hero {
+  background: magenta;
+}
