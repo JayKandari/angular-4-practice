@@ -5,12 +5,16 @@ import { Hero } from './hero';
   selector: 'hero-detail',
   styles: [`
   .selected_hero {
+    position: fixed;
+    right:20px;
+    top: 480px;
+    width:500px;
   }
   `],
   template: `
   <div class="selected_hero" [hidden]="hero == null">
   <md-card>
-    <h4>Selected Hero : hero.name</h4>
+    <h4>Selected Hero : {{hero.name}}</h4>
     Data:
     <pre>
       {{hero | json}}
