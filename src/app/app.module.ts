@@ -11,18 +11,20 @@ import {MdButtonModule, MdCheckboxModule, MdInputModule, MdDialogModule, MdListM
 
 // Import custom components..
 import { HeroDetailComponent } from './hero-detail.component';
+import { HeroSearchComponent } from './hero-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    HeroSearchComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     NoopAnimationsModule,
     MdButtonModule,
-    MdCheckboxModule, MdInputModule, MdDialogModule
+    MdCheckboxModule, MdInputModule, MdDialogModule, MdCardModule
   ],
   schemas: [],
   providers: [],

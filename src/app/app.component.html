@@ -1,36 +1,59 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div id="superheroes">
   <h1>{{title}}</h1>
-  <div class="actions">
-    <h4>Actions:</h4>
-    <button md-raised-button (click)="toggleDebug()">Toggle Debug box</button>
-    <label><md-checkbox [(ngModel)]="deleteConfirm"> Confirm before deleting item</md-checkbox></label>
-  </div>
+  <md-card class="actions">
+    <md-card-header>
+      <md-card-title>Actions</md-card-title>
+      <md-card-subtitle>Common action Links</md-card-subtitle>
+    </md-card-header>
+    <md-card-content>
+      <button md-raised-button (click)="toggleDebug()">Toggle Debug box</button>
+      <label><md-checkbox [(ngModel)]="deleteConfirm"> Confirm before deleting item</md-checkbox></label>
+    </md-card-content>
+  </md-card>
 
-  <div class="addNewHero">
-    <h4>Add new Hero:</h4>
-    <md-input-container>
-      <input mdInput placeholder="Hero Name" [(ngModel)]="newhero.name" >
-    </md-input-container>
-    <button md-raised-button (click)="addNewHero(newhero.name)">Add Hero</button>
-  </div>
+  <md-card class="addNewHero">
+    <md-card-header>
+      <md-card-title>Add new Hero</md-card-title>
+    </md-card-header>
+    <md-card-content>
+      <md-input-container>
+        <textarea mdInput placeholder="Hero Name" [(ngModel)]="newhero.name" rows="6" cols="80" ></textarea>
+      </md-input-container>
+    </md-card-content>
+    <md-card-actions>
+      <button md-raised-button (click)="addNewHero(newhero.name)">Add Hero</button>
+    </md-card-actions>
+  </md-card>
 
-  <div class="heroes_list">
-    <h4 md-subheader>Heroes List</h4>
-    <p class="hint">Click Hero name to select it, click again to deselect. Click "remove" to delete a Hero.</p>
-    <div>
+
+  <hero-search [query]="'Lorem ipsum'"></hero-search>
+
+  <md-card class="heroes_list">
+    <md-card-header>
+      <md-card-title>Heroes List</md-card-title>
+      <md-card-subtitle>Click Hero name to select it, click again to deselect. Click delete icon to delete a Hero.</md-card-subtitle>
+    </md-card-header>
+    <md-card-content>
       <md-list>
         <md-list-item *ngFor="let hero of heroes let i = index" [class.selected]="hero == selectedHero" (click)="selectHero(hero)">
           <p md-line>{{hero.name}} <i class="material-icons removeitem" (click)="removeHeroItem(i)">ic_delete</i></p>
         </md-list-item>
       </md-list>
-    </div>
-  </div>
+    </md-card-content>
+  </md-card>
 
   <hero-detail [hero]="selectedHero"></hero-detail>
 
   <div class="debug" [hidden]="!showDebugDialog">
-    <h3>Debugging Component: </h3>
-    <div class="messages"><pre >{{ this | json }}</pre></div>
+    <md-card class="" >
+      <md-card-header>
+        <md-card-title>Debug Messages</md-card-title>
+        <md-card-subtitle>Showing dump</md-card-subtitle>
+      </md-card-header>
+      <md-card-content>
+        <div class="messages"><pre >{{ this | json }}</pre></div>
+      </md-card-content>
+    </md-card>
   </div>
 </div>

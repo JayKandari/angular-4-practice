@@ -5,22 +5,23 @@
 }
 
 #superheroes {
-  background: beige;
+  /*background: beige;*/
+  width: 440px;
 }
 #superheroes h1 {
   color : maroon;
 }
 #superheroes .debug {
-  position: absolute;
-  opacity: 0.8;
+  position: fixed;
+  /*opacity: 0.8;*/
   right:20px;
   top: 20px;
   width:500px;
-  height: 400px;
+  /*height: 400px;
 
   background: wheat;
   border: 1px solid maroon;
-  padding: 5px;
+  padding: 5px;*/
 }
 #superheroes .debug .messages{
   position: relative;

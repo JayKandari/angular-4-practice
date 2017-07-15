@@ -5,17 +5,17 @@ import { Hero } from './hero';
   selector: 'hero-detail',
   styles: [`
   .selected_hero {
-    background: magenta;
   }
   `],
-  template: `<md-card>
+  template: `
   <div class="selected_hero" [hidden]="hero == null">
+  <md-card>
     <h4>Selected Hero : hero.name</h4>
     Data:
     <pre>
       {{hero | json}}
     </pre>
-  </div></md-card>
+  </md-card></div>
   `
 })
 export class HeroDetailComponent {
